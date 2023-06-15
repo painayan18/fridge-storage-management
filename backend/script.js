@@ -21,3 +21,5 @@ document.getElementById('item-form').addEventListener('submit', function(e) {
   itemNameInput.value = '';
   itemQuantityInput.value = '';
 });
+
+// TEST MAJORICA WAS HERE
