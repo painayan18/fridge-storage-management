@@ -7,29 +7,22 @@ h1 {
   text-align: center;
 }
 
-form {
+h2 {
+  margin-top: 20px;
+}
+
+input, button {
+  margin-top: 10px;
+}
+
+#search-results {
+  list-style-type: none;
+}
+
+#quantity-list li.low {
+  color: red;
+}
+
+#quantity-list li {
   margin-bottom: 10px;
 }
-
-input[type="text"], input[type="number"] {
-  padding: 5px;
-  margin-right: 5px;
-}
-
-button {
-  padding: 5px 10px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 5px;
-}
-
-li span {
-  font-weight: bold;
-}
-
