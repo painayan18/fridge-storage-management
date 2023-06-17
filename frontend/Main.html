@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fridge Management</title>
+  <style>
+     * {
+      box-sizing: border-box;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    [class*="col-"] {
+      float: left;
+      padding: 15px;
+    }
+
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    html {
+      font-family: "Lucida Sans", sans-serif;
+    }
+
+    .header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      padding: 8px;
+      margin-bottom: 7px;
+      background-color: #33b5e5;
+      color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .menu li:hover {
+      background-color: #0099cc;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="indexLogo.png" alt="Fridge Management Logo">
+    </div>
+    <h1 class="header-title">Fridge Management</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-3 menu">
+      <ul>
+        <li onclick="showContent('content1')">Add User</li>
+        <li onclick="showContent('content2')">Modify Users</li>
+        <li onclick="showContent('content3')">Add Fridges</li>
+        <li onclick="showContent('content4')">Modify Fridges</li>
+      </ul>
+    </div>
+
+    <div class="col-9">
+      <div id="content1">
+        <h1>Add User</h1>
+        <form id="addUserForm">
+          <!-- Add User form content goes here -->
+        </form>
+      </div>
+      <div id="content2" class="hide">
+        <h1>Modify Users</h1>
+        <form id="modifyUsersForm">
+          <!-- Modify Users form content goes here -->
+        </form>
+      </div>
+      <div id="content3" class="hide">
+        <h1>Add Fridges</h1>
+        <form id="addFridgesForm">
+          <!-- Add Fridges form content goes here -->
+        </form>
+      </div>
+      <div id="content4" class="hide">
+        <h1>Modify Fridges</h1>
+        <form id="modifyFridgesForm">
+          <!-- Modify Fridges form content goes here -->
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showContent(contentId) {
+      var contentDivs = document.getElementsByClassName("col-9")[0].getElementsByTagName("div");
+      for (var i = 0; i < contentDivs.length; i++) {
+        contentDivs[i].classList.add("hide");
+      }
+
+      var selectedContent = document.getElementById(contentId);
+      if (selectedContent) {
+        selectedContent.classList.remove("hide");
+      }
+    }
+  </script>
+</body>
+</html>
